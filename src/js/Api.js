@@ -11,7 +11,13 @@ class Api {
     
     
     static async editarCliente(id, data){
-
+        await fetch("http://atividade-api-clientes.herokuapp.com/clientes" + id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
     }
     
 
