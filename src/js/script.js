@@ -3,7 +3,6 @@ import { Api } from "./Api.js";
 const clientes = await Api.listarClientes();
 const listaClientes  = document.querySelector("ul");
     
-  //EXEMPLO DE CONSTRUÇÃO DO MÉTODO
   const templateClientes = (clientes) => {
   
       clientes.forEach(({nome,idade,cpf,data_nasc,sexo,email,endereco,telefone_fixo})=>{

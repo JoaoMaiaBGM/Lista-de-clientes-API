@@ -19,9 +19,9 @@ nomesClientes(clientes)
 
 
 const btnBuscarCliente = document.getElementById('btnBuscarCliente');
-btnBuscarCliente.addEventListener('click', handleEvent);
+btnBuscarCliente.addEventListener('click', handleEventBuscarCliente);
 
-function handleEvent() {
+function handleEventBuscarCliente(event) {
   event.preventDefault();
   const listaBuscarCliente = document.getElementById('buscarCliente');
 
@@ -61,7 +61,50 @@ function handleEvent() {
 
       const inputTelefoneFixo = document.getElementById('telefone_fixo');
       inputTelefoneFixo.value = pessoa.telefone_fixo;
+    }
+  }
+}
 
+
+const btnEdit = document.getElementById('btnEdit');
+btnEdit.addEventListener('click', handlEventEdit);
+
+function handlEventEdit(event) {
+  event.preventDefault();
+
+  const listaBuscarCliente = document.getElementById('buscarCliente');
+
+  for(let i = 0; i < clientes.length; i++) {
+    if(clientes[i].id == listaBuscarCliente.value) {
+      const inputNome         = document.getElementById('nome');
+      const inputDataNasc     = document.getElementById('data_nasc');
+      const optionSexo        = document.getElementById('sexo_masculino', 'sexo_feminino');
+      const inputEmail        = document.getElementById('email');
+      const inputCep          = document.getElementById('cep');
+      const inputRua          = document.getElementById('rua');
+      const inputNumero       = document.getElementById('numero');
+      const inputBairro       = document.getElementById('bairro');
+      const inputCidade       = document.getElementById('cidade');
+      const inputEstado       = document.getElementById('estado');
+      const inputTelefoneFixo = document.getElementById('telefone_fixo');
+
+      let data = {
+        nome: inputNome.value, 
+        data_nasc: inputDataNasc.value, 
+        sexo: optionSexo.value, 
+        email: inputEmail.value, 
+        endereco:{
+          cep: inputCep.value, 
+          rua: inputRua.value, 
+          numero: inputNumero.value, 
+          bairro: inputBairro.value, 
+          cidade: inputCidade.value, 
+          estado: inputEstado.value
+        }, 
+        telefone_fixo: inputTelefoneFixo.value
+      };
+      
+      Api.editarCliente(clientes[i].id, data);
     }
   }
 }

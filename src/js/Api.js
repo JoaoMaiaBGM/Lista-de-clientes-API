@@ -11,7 +11,7 @@ class Api {
     
     
     static async editarCliente(id, data){
-        await fetch("http://atividade-api-clientes.herokuapp.com/clientes" + id, {
+        await fetch("http://atividade-api-clientes.herokuapp.com/clientes/" + id, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -27,9 +27,10 @@ class Api {
 
 
     static async deletarCliente(id){
-
+        const response = await fetch("http://atividade-api-clientes.herokuapp.com/clientes/" + id, {
+            method: "DELETE"
+        });
     }
-
 }
 
 export {Api}
