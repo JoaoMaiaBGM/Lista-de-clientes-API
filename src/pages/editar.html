@@ -30,21 +30,21 @@
         <h2>Editar cliente</h2>
         <form id="editForm" action="#">
 
-            <input type="text" name="nome" placeholder="nome">
-            <input type="date" name="data_nasc" placeholder="data de nascimento">
+            <input type="text" name="nome" placeholder="nome" id="nome">
+            <input type="date" name="data_nasc" placeholder="data de nascimento" id="data_nasc">
             <select name="sexo" id="sexo">
-                <option selected value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
+                <option id="sexo_masculino" selected value="Masculino">Masculino</option>
+                <option id="sexo_feminino" value="Feminino">Feminino</option>
             </select>
-            <input type="email" name="email" placeholder="email">
+            <input type="email" name="email" placeholder="email" id="email">
 
             <hr>
             <h3>Cadastrar Endereço:</h3>
-            <input type="number" name="cep" placeholder="cep">
-            <input type="text" name="rua" placeholder="rua">
-            <input type="number" name="numero" placeholder="numero">
-            <input type="text" name="bairro" placeholder="bairro">
-            <input type="text" name="cidade" placeholder="cidade">
+            <input type="number" name="cep" placeholder="cep" id="cep">
+            <input type="text" name="rua" placeholder="rua" id="rua">
+            <input type="number" name="numero" placeholder="numero" id="numero">
+            <input type="text" name="bairro" placeholder="bairro" id="bairro">
+            <input type="text" name="cidade" placeholder="cidade" id="cidade">
             <select id="estado" name="estado">
                 <option selected value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -78,7 +78,7 @@
 
             <hr>
             <h3>Cadastrar Contato:</h3>
-            <input type="tel" name="telefone_fixo" placeholder="telefone">
+            <input type="tel" name="telefone_fixo" placeholder="telefone" id="telefone_fixo">
 
             <button id="btnEdit">Editar</button>
         </form>
