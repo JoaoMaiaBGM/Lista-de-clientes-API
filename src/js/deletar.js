@@ -29,9 +29,7 @@ async function handleEventDelete(event) {
     if(clientes[i].id == listaBuscarCliente.value) {
 
       const pessoa = clientes[i]
-      console.log(clientes[i].id)
-      console.log(listaBuscarCliente.value)
-
+      
       Api.deletarCliente(pessoa.id);
 
     }      
